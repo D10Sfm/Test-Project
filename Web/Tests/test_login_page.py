@@ -16,6 +16,6 @@ class TestLoginPage(DriverChrome,LoginPageConst):
         loginPage.enterEmail(self.user_details['email'])
         loginPage.enterPassword(self.user_details['password'])
         loginPage.clickOnLoginBtn()
-        # loginPage.clickOnPopUpMsg()
+        loginPage.clickOnPopUpMsg('sss')
 
 

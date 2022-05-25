@@ -55,10 +55,15 @@ class LoginPage(LoginPageConst):
         # )
 
     @allure.step('Clicking on the pop-up message')
-    def clickOnPopUpMsg(self):
+    def clickOnPopUpMsg(self,msg):
         driver = self.driver
         alert = driver.switch_to.alert
         alert_msg = alert.text
+        print(alert_msg)
+        try:
+            assert alert_msg == msg
+        except AssertionError:
+            print(f"The {alert_msg} is the wrong message!")
         print("Alert shows following message: " + alert_msg)
         alert.accept()
         print(" Clicked on the OK Button in the Alert Window")
